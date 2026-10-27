@@ -1,4 +1,7 @@
+# Core web application
 Flask>=3.0,<4.0
-openai>=1.30,<3.0
 python-dotenv>=1.0,<2.0
 requests>=2.31,<3.0
+
+# Optional AI itinerary generation and editing
+openai>=1.30,<3.0

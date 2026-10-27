@@ -3,8 +3,7 @@ from __future__ import annotations
 
 import json
 import os
-import re
-from datetime import date, datetime, timedelta
+from datetime import date, timedelta
 from functools import lru_cache
 from pathlib import Path
 from typing import Any
@@ -358,7 +357,7 @@ def modify_itinerary_with_ai(message: str, itinerary: dict[str, Any], trip: dict
 def deterministic_chat(message: str, itinerary: dict[str, Any], trip: dict[str, Any]) -> tuple[dict[str, Any], str]:
     text = message.lower()
     changed = False
-    for index, day in enumerate(itinerary["days"]):
+    for day in itinerary["days"]:
         activities = day["activities"]
         if any(term in text for term in ("relax", "slow", "leisure", "break", "आराम", "धीम", "மெதுவ", "ஓய்வு")):
             if activities:
